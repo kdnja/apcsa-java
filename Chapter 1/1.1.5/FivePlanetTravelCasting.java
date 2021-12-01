@@ -20,25 +20,33 @@ public class FivePlanetTravelCasting {
         // total travel time
         double total = 0;
 
-        /* your code here */
-        System.out.println("Casting algorithm\n---");
+        // main //
 
-        total = 0;
+        // --- casting algorithm ---
+        System.out.println("\n---\nCasting algorithm\n---");
+
+        // add the travel time for each planet
+        // each planet is casted to a double for accuracy
         total += (double) mercury / lightSpeed;
         total += (double) venus / lightSpeed;
         total += (double) mars / lightSpeed;
         total += (double) jupiter / lightSpeed;
         total += (double) saturn / lightSpeed;
+
+        // print out travel time for each planet
         System.out.println("Travel time to Mercury: " + (double) mercury / lightSpeed + " hours.");
         System.out.println("Travel time to Venus: " + (double) venus / lightSpeed + " hours.");
         System.out.println("Travel time to Mars: " + (double) mars / lightSpeed + " hours.");
         System.out.println("Travel time to Jupiter: " + (double) jupiter / lightSpeed + " hours.");
         System.out.println("Travel time to Saturn: " + (double) saturn / lightSpeed + " hours.");
 
+        // print out total travel time
         System.out.println("Total travel time: " + total + " hours.\n---");
 
+        // calculate the average travel time
         int average = (int) (total / numPlanets + .5);
-        System.out.println("Average travel time: " + average + " hours.");
 
+        // print out average travel time
+        System.out.println("Average travel time: " + average + " hours.");
     }
 }

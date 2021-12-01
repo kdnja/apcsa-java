@@ -20,10 +20,13 @@ public class FivePlanetTravelWidening {
     // total travel time
     double total = 0;
 
-    /* your code here */
-    System.out.println("Widening algorithm\n---");
+    // main //
 
-    total = 0;
+    // --- widening algorithm ---
+    System.out.println("\n---\nWidening algorithm\n---");
+
+    // go through each planet and divide by our speed for the time it takes to get
+    // there
     double mercuryCalc = mercury;
     mercuryCalc /= lightSpeed;
     double venusCalc = venus;
@@ -36,15 +39,20 @@ public class FivePlanetTravelWidening {
     saturnCalc /= lightSpeed;
     total += mercuryCalc + venusCalc + marsCalc + jupiterCalc + saturnCalc;
 
+    // print out travel time for each planet
     System.out.println("Travel time to Mercury: " + mercuryCalc + " hours.");
     System.out.println("Travel time to Venus: " + venusCalc + " hours.");
     System.out.println("Travel time to Mars: " + marsCalc + " hours.");
     System.out.println("Travel time to Jupiter: " + jupiterCalc + " hours.");
     System.out.println("Travel time to Saturn: " + saturnCalc + " hours.");
 
+    // print out total time
     System.out.println("Total travel time: " + total + " hours.\n---\n");
 
+    // calculate average travel time
     int average = (int) (total / numPlanets + .5);
+
+    // print out average travel time
     System.out.println("Average travel time: " + average + " hours.");
   }
 }
