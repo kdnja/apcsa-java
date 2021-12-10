@@ -1,3 +1,5 @@
+package CSA_124_DogMaker;
+
 /*
 * Activity 1.2.4
 * CodeCompiler
