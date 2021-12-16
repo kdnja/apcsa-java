@@ -65,7 +65,7 @@ public class DogObject {
     }
 
     /**
-     * Increment nubmer of dogs
+     * Increment number of dogs
      */
     private static void incrementNumDogs() {
         numDogs += 1;

@@ -142,11 +142,9 @@ public class CakeGUI {
                 if (cakeAction.getAction().equals("Constructor 0")) {
                     cakes.add(new CakeObject(cakeAction.getIdentifier()));
                 } else if (cakeAction.getAction().equals("Constructor 1")) {
-                    // a try is like an if statement, "throwing" an error if the body of the try
-                    // fails
+                    // a try is like an if statement, "throwing" an error if the body of the try fails
                     try {
-                        // An example for when you have to parse Strings
-                        // if (cakeAction.getArgs()[0].equals("\"Blue\""))
+                        // An example for when you have to parse Strings if (cakeAction.getArgs()[0].equals("\"Blue\""))
                         int tiers = Integer.parseInt(cakeAction.getArgs()[0]);
                         if (tiers <= 1) {
                             cakes.add(new CakeObject(cakeAction.getIdentifier(), 1));
@@ -182,7 +180,7 @@ public class CakeGUI {
                             if (methodArgs != null) // null args means illegal or undefined method call, ignore it
                             {
                                 if (methodArgs[0].equals("")) {
-                                    // implememnt methods with empty param list
+                                    // implement methods with empty param list
                                     if (cakeMethodIdentifier.equals("addCandles")) {
                                         cake.addCandles();
                                     } else if (cakeMethodIdentifier.equals("oneTier")) {
@@ -193,8 +191,7 @@ public class CakeGUI {
                                         cake.threeTiers();
                                     }
                                 } else {
-                                    // a try is like an if statement, "throwing" an error if the body of the try
-                                    // fails
+                                    // a try is like an if statement, "throwing" an error if the body of the try fails
                                     try {
                                         System.out.println("Trying numerical methods.");
 
@@ -209,7 +206,7 @@ public class CakeGUI {
                                             cake.setY(valueToSet);
                                         }
                                     } catch (NumberFormatException e) {
-                                        // implmenet methods with string param
+                                        // implement methods with string param
                                         String valueToSet = null;
                                         if (cakeAction.getArgs().length > 0) {
                                             valueToSet = cakeAction.getArgs()[0];
@@ -248,8 +245,7 @@ public class CakeGUI {
     }
 
     private void loadFiles() {
-        // a try is like an if statement, "throwing" an error if the body of the try
-        // fails
+        // a try is like an if statement, "throwing" an error if the body of the try fails
         try {
             kitchenImage = ImageIO.read(new File("kitchen.png"));
         } catch (Exception e) {

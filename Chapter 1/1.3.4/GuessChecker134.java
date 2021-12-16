@@ -11,7 +11,7 @@ public class GuessChecker134 {
 
         // Generate the random number
         String targetStr = makeCode();
-        System.out.println(targetStr); // uncomment for debugging
+        // System.out.println(targetStr); // uncomment for debugging
 
         // Break the random number into four variables.
         int r1 = Integer.parseInt(targetStr.substring(0, 1));
@@ -21,7 +21,7 @@ public class GuessChecker134 {
 
         // Get the user's guess.
         String guess = getGuess();
-        System.out.println(guess); // uncomment for debugging
+        // System.out.println(guess); // uncomment for debugging
 
         // Break the user's guess into four variables.
         int g1 = Integer.parseInt(guess.substring(0, 1));

@@ -81,7 +81,7 @@ public class CodeCompiler {
                     if (tokens.length == 5 && tokens[4].equals("Cake();")) {
                         return new CakeAction("Constructor 0", tokens[1]);
                     }
-                    // Consturctor with some number of arguments
+                    // Constructor with some number of arguments
                     else {
                         String argumentString = "";
                         for (int i = 4; i < tokens.length; i++) {
@@ -111,7 +111,7 @@ public class CodeCompiler {
 
         // dot operator means method call
         if (tokens[0].contains(".")) {
-            // Must be operating on a valid identifer. Whether that Cake object exists gets
+            // Must be operating on a valid identifier. Whether that Cake object exists gets
             // checked in CakeGUI
             String cakeIdentifier = tokens[0].split("\\.")[0];
 

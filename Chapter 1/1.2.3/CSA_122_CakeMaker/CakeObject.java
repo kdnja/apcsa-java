@@ -78,7 +78,7 @@ public class CakeObject {
      * @param cakeIdentifier the cakeIdentifier to set
      */
     public void setCakeIdentifier(String cakeIdentifier) {
-        System.out.println("CakeObject: Setting cakeIndentifier" + cakeIdentifier);
+        System.out.println("CakeObject: Setting cakeIdentifier" + cakeIdentifier);
         this.cakeIdentifier = cakeIdentifier;
     }
 

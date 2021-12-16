@@ -15,6 +15,17 @@ public class DeMorgansLaw {
         boolean b = Boolean.parseBoolean(sc.nextLine());
 
         /* your code here */
-
+        System.out.println("\nFirst law\n");
+        if (!(a && b) == true) {
+            System.out.println("Not (a and b) is true");
+        } else {
+            System.out.println("Not (a and b) is false");
+        }
+        if (!a || !b == true) {
+            System.out.println("(not a) or (not b) is true");
+        } else {
+            System.out.println("(not a) or (not b) is false");
+        }
+        System.out.println("\n");
     }
 }

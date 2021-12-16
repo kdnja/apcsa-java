@@ -153,7 +153,7 @@ public class DogGUI {
                             if (methodArgs != null) // null args means illegal or undefined method call, ignore it
                             {
                                 if (methodArgs[0].equals("")) {
-                                    // implememnt methods with empty param list
+                                    // implement methods with empty param list
                                     System.out.println("dogAction.getArgs() " + dogAct.getArgs());
                                     // methods with no params
                                     if (methodIdentifier.equals("eat")) {
@@ -187,8 +187,7 @@ public class DogGUI {
     }
 
     private void loadFiles() {
-        // a try is like an if statement, "throwing" an error if the body of the try
-        // fails
+        // a try is like an if statement, "throwing" an error if the body of the try fails
         try {
             kitchenImage = ImageIO.read(new File("kitchenPorch.png"));
         } catch (Exception e) {
