@@ -7,82 +7,71 @@
 * Copyright(c) 2019 PLTW to present. All rights reserved
 */
 
-/** 
-* Determines the action the user wants to take with a dog.
-*/
-public class DogAction
-{
-  private String action;
-  private String identifier;
-  private String[] args;
+/**
+ * Determines the action the user wants to take with a dog.
+ */
+public class DogAction {
+    private String action;
+    private String identifier;
+    private String[] args;
 
-  public DogAction() 
-  {
-  }
-  
-  /**
-   * @return the identifier
-   */
-  public String getIdentifier()
-  {
-    return identifier;
-  }
+    public DogAction() {
+    }
 
-  /**
-   * @return the args
-   */
-  public String[] getArgs()
-  {
-    return args;
-  }
+    /**
+     * @return the identifier
+     */
+    public String getIdentifier() {
+        return identifier;
+    }
 
-  /**
-   * @param args the args to set
-   */
-  public void setArgs(String[] args)
-  {
-    this.args = args;
-  }
+    /**
+     * @return the args
+     */
+    public String[] getArgs() {
+        return args;
+    }
 
-  /**
-   * @param identifier the dog identifier to set
-   */
-  public void setIdentifier(String identifier)
-  {
-    this.identifier = identifier;
-  }
+    /**
+     * @param args the args to set
+     */
+    public void setArgs(String[] args) {
+        this.args = args;
+    }
 
-  public String toString()
-  {
-    return "Dog object: " + identifier + " method: " + action + " arguments:" + args;
-  }
+    /**
+     * @param identifier the dog identifier to set
+     */
+    public void setIdentifier(String identifier) {
+        this.identifier = identifier;
+    }
 
-  public DogAction(String action, String identifier)
-  {
-    this.action = action;
-    this.setIdentifier(identifier);
-  }
+    public String toString() {
+        return "Dog object: " + identifier + " method: " + action + " arguments:" + args;
+    }
 
-  public DogAction(String action, String identifier, String[] args)
-  {
-    this.action = action;
-    this.setIdentifier(identifier);
-    this.setArgs(args);
-  }
+    public DogAction(String action, String identifier) {
+        this.action = action;
+        this.setIdentifier(identifier);
+    }
 
-  /**
-   * @return the action
-   */
-  public String getAction()
-  {
-    return action;
-  }
+    public DogAction(String action, String identifier, String[] args) {
+        this.action = action;
+        this.setIdentifier(identifier);
+        this.setArgs(args);
+    }
 
-  /**
-   * @param action the action to set
-   */
-  public void setAction(String action)
-  {
-    this.action = action;
-  }
+    /**
+     * @return the action
+     */
+    public String getAction() {
+        return action;
+    }
+
+    /**
+     * @param action the action to set
+     */
+    public void setAction(String action) {
+        this.action = action;
+    }
 }

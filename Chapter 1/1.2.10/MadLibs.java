@@ -21,8 +21,10 @@ public class MadLibs {
 
         // Test cases
         String lib = "Harry was <verb> to school. During his trip, he saw his <adj> friend that he has first period with. On his way to school he remembered that he forgot his <noun> which he normally brought with him everyday.";
-        // String lib = "I went to the animal <noun>, the <plural_noun> and the <number> beasts were there.";
-        // String lib = "Once upon a time in a <adjective> land, a <noun> <adverb> grew.";
+        // String lib = "I went to the animal <noun>, the <plural_noun> and the <number>
+        // beasts were there.";
+        // String lib = "Once upon a time in a <adjective> land, a <noun> <adverb>
+        // grew.";
 
         // This is a blank string that throughout the code we add to and then we print
         String riddle = "";
@@ -31,7 +33,8 @@ public class MadLibs {
         int start = lib.indexOf("<");
         int end = lib.indexOf(">");
 
-        // This creates a substring of the original string lib that allows us to assign a
+        // This creates a substring of the original string lib that allows us to assign
+        // a
         // variable to the parts of speech we want to replace with words
         String temp = lib.substring(start + 1, end);
         // This prints the part of speech we want to replace
@@ -41,7 +44,8 @@ public class MadLibs {
         // riddle, so that we can at the end print a new string with the new words
         riddle += lib.substring(0, start) + str;
 
-        // This creates a substring of the original string lib that starts where the last
+        // This creates a substring of the original string lib that starts where the
+        // last
         // substring just ended so that when we look for > and < we can find the next
         // one and not the very first one.
         String newString = lib.substring(end + 1);
@@ -59,7 +63,8 @@ public class MadLibs {
         // riddle, so that we can at the end print a new string with the new words
         riddle += newString.substring(0, start) + str;
 
-        // This creates a substring of the original string lib that starts where the last
+        // This creates a substring of the original string lib that starts where the
+        // last
         // substring just ended so that when we look for > and < we can find the next
         // one and not the very first one.
         String myString = newString.substring(end + 1);

@@ -7,15 +7,13 @@
  * Copyright(c) 2019 PLTW to present. All rights reserved
  */
 
-/** 
+/**
  * The runner for the DogMaker suite of classes.
  * It defines a main method to create a GUI from which
  * all the rest of the functionality of DogMaker is handled.
  */
-public class DogMaker
-{
-  public static void main (String [] args)
-  {
-    new DogGUI();
-  }
+public class DogMaker {
+    public static void main(String[] args) {
+        new DogGUI();
+    }
 }

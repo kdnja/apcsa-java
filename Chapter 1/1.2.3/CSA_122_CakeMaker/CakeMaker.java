@@ -13,7 +13,7 @@
  * all the rest of the functionality of CakeMaker is handled.
  */
 public class CakeMaker {
-  public static void main(String[] args) {
-    new CakeGUI();
-  }
+    public static void main(String[] args) {
+        new CakeGUI();
+    }
 }
