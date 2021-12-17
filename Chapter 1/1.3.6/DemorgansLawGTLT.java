@@ -20,6 +20,11 @@ public class DeMorgansLawGTLT {
         }
 
         /* your code here */
-
+        System.out.println("Checking that either x or y are not negative ...");
+        if (!((x < 0) && (y < 0))) {
+            System.out.println("Either x or y are not negative");
+        } else {
+            System.out.println("Both x and y are negative");
+        }
     }
 }
