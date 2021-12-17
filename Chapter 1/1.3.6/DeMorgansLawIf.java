@@ -21,14 +21,30 @@ public class DeMorgansLawIf {
         }
 
         /* your code here */
+        if (!a) {
+            System.out.println("NOT (a AND b) evaluates to true");
+        } else {
+            if (!b) {
+                System.out.println("NOT (a AND b) evaluates to true");
+            } else {
+                System.out.println("NOT (a AND b) evaluates to false");
+            }
+        }
 
         if (!(a || b)) {
             System.out.println("NOT (a OR b) evaluates to true");
         } else {
             System.out.println("NOT (a OR b) evaluates to false");
         }
-
         /* your code here */
-
+        if (!a) {
+            if (!b) {
+                System.out.println("NOT (a OR b) evaluates to true");
+            } else {
+                System.out.println("NOT (a OR b) evaluates to false");
+            }
+        } else {
+            System.out.println("NOT (a OR b) evaluates to false");
+        }
     }
 }
