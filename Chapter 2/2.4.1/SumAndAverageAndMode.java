@@ -11,6 +11,7 @@ public class SumAndAverageAndMode {
 
         System.out.print("Enter a series of numbers, separated by spaces: ");
         String input = sc.nextLine();
+        sc.close();
         String[] numbers = input.split(" ");
         int sum = 0;
         int mode = 0;
