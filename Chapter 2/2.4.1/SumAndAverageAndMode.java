@@ -31,7 +31,7 @@ public class SumAndAverageAndMode {
                 mode = Integer.parseInt(numbers[i]);
             }
         }
-        
+
         double average = (double) sum / numbers.length;
         System.out.println("Sum: " + sum);
         System.out.println("Average: " + average);
