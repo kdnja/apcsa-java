@@ -1,4 +1,3 @@
-import java.text.DecimalFormat;
 import java.util.Scanner;
 import java.util.HashMap;
 import java.util.ArrayList;
@@ -146,10 +145,7 @@ public class Review {
     }
 
     // Activity 2 Method //
-    /** Method to determine a total sentiment value based on the sentiment value of all the 
-     * words in a review found in a file
-     * 
-     * Comments are used for debugging the method
+    /* Method to determine a total sentiment value based on the sentiment value of all the words in a review found in a file
      * 
      * Preconditions: txt file must exist
      * Postconditions: txt file remains intact and a total sentiment value is returned
@@ -158,8 +154,6 @@ public class Review {
      * @return the total sentiment value as a double
      */
     public static double totalSentiment(String fileName) {
-        // System.out.println("File accessed: \"" + fileName + "\"");
-        // System.out.println("String input: \"" + str + "\"");
         String str = textToString(fileName);
         String word = "";
         double num = 0;
@@ -170,23 +164,44 @@ public class Review {
             } else {
                 if (sentimentVal(word) != 0.0) {
                     num += sentimentVal(word);
-                    // System.out.println("Word: \"" + word + "\"");
-                    // System.out.println("Value of \"" + word + "\": " + sentimentVal(word));
-                    // System.out.println("Total after adding \"" + word + "\": " + num);
                 }
-
                 word = "";
             }
         }
-
         return num;
+    }
+
+    /* Method to determine the star rating of a review based off of the total sentiment
+     * 
+     * Preconditions: txt file must exist 
+     * Postconditions: txt file remains intact and a star rating is returned
+     * 
+     * @param fileName - the name of the txt file with the review
+     * @return the star rating as an integer
+     */
+    public static int starRating(String fileName) {
+        double total = totalSentiment(fileName);
+        if (total >= 15.0) {
+            return 4;
+        } else if (total >= 10.0) {
+            return 3;
+        } else if (total >= 5.0) {
+            return 2;
+        } else if (total >= 0.0) {
+            return 1;
+        } else {
+            return 0;
+        }
     }
 
     /** 
      * Main (written by Caden Jamason)
      */
     public static void main(String[] args) {
-        double total = totalSentiment("test.txt");
+        double total = totalSentiment("SimpleReview.txt");
+        double star = starRating("SimpleReview.txt");
+
         System.out.println(total);
+        System.out.println(star);
     }
 }
