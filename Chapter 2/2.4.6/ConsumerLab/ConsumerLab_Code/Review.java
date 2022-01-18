@@ -194,14 +194,47 @@ public class Review {
         }
     }
 
+    /* Method to create a fake review based on "starred" words
+     * 
+     * Preconditions: txt file must exist with "starred" words
+     * Postconditions: txt file remains intact and a fake review is generated
+     * 
+     * @param fileName - the name of the txt file with the review
+     * @return the fake review as a String
+     */    
+    public static String fakeReview(String fileName) {
+        String input = textToString(fileName);
+        String output = "";
+        int asterisk = 0;
+        int end = 0;
+        while (asterisk > 0) {
+            asterisk = input.substring(asterisk + 1).indexOf("*");
+            if (asterisk > 0) {
+                output = output + input.substring(end, asterisk);
+                end = input.substring(asterisk).indexOf(" ");
+                String temp = input.substring(asterisk + 1, end);
+                String replacement = "";
+                if (sentimentVal(temp) > 0) {
+                    replacement = randomPositiveAdj();
+                } else {
+                    replacement = randomNegativeAdj();
+                }
+                output = output + replacement;
+            }
+        }
+        return output;
+    }
+
     /** 
      * Main (written by Caden Jamason)
      */
     public static void main(String[] args) {
         double total = totalSentiment("SimpleReview.txt");
         double star = starRating("SimpleReview.txt");
+        String fakeReview = fakeReview("SimpleReview.txt");
 
         System.out.println(total);
         System.out.println(star);
+        System.out.println(fakeReview);
     }
 }

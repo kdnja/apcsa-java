@@ -1,0 +1,7 @@
+horrid,
+disgusting,
+bad,
+ugly,
+dumb,
+stupid,
+offensive,

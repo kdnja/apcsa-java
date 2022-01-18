@@ -1,0 +1,6 @@
+wicked,
+awesome,
+cool,
+epic,
+fabulous,
+amazing,
