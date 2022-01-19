@@ -201,28 +201,55 @@ public class Review {
      * 
      * @param fileName - the name of the txt file with the review
      * @return the fake review as a String
-     */    
+     */
     public static String fakeReview(String fileName) {
-        String input = textToString(fileName);
-        String output = "";
-        int asterisk = 0;
-        int end = 0;
-        while (asterisk > 0) {
-            asterisk = input.substring(asterisk + 1).indexOf("*");
-            if (asterisk > 0) {
-                output = output + input.substring(end, asterisk);
-                end = input.substring(asterisk).indexOf(" ");
-                String temp = input.substring(asterisk + 1, end);
-                String replacement = "";
-                if (sentimentVal(temp) > 0) {
-                    replacement = randomPositiveAdj();
-                } else {
-                    replacement = randomNegativeAdj();
-                }
-                output = output + replacement;
+        // contents of text file
+        String fileText = textToString(fileName);
+        // empty String to store the answer
+        String answer = "";
+        // index of the asterisk
+        int asterIndex = fileText.indexOf("*");
+
+        // loops while there is an asterisk
+        while (asterIndex > -1) {
+            // find the next space from the asterisk index
+            int nextSpace = fileText.indexOf(" ", asterIndex);
+            // adds the first part of fileText to answer
+            answer += fileText.substring(0, asterIndex);
+            // empty String for punctuation
+            String punc = "";
+
+            // if the asterisk is before the last word in fileText
+            if (nextSpace == -1) {
+                // get the punctuation at the end of fileText
+                punc = getPunctuation(fileText);
+                // reset value of fileText
+                fileText = "";
+            } else {
+                // assigns word by getting the character after the asterisk and the character before the next space
+                String word = fileText.substring(asterIndex + 1, nextSpace);
+                // get punctuation at the end of the word
+                punc = getPunctuation(word);
+                // add a space afterwards
+                punc += " ";
+                // get the rest of the string that's after the space
+                fileText = fileText.substring(nextSpace + 1);
             }
+
+            // concatenate random adjective
+            answer += randomAdjective();
+
+            // concatenate punctuation
+            answer += punc;
+
+            // reassign asterisk index to next asterisk
+            asterIndex = fileText.indexOf("*");
         }
-        return output;
+
+        // adds the rest of the string that's after the space
+        answer += fileText;
+        // returns the fake review
+        return answer;
     }
 
     /** 

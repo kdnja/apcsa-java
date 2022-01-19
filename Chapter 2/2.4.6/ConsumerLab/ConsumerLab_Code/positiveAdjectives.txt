@@ -1,6 +1,6 @@
-wicked,
-awesome,
-cool,
-epic,
-fabulous,
-amazing,
+wicked
+awesome
+cool
+epic
+fabulous
+amazing
