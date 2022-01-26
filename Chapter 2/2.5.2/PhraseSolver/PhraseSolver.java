@@ -12,7 +12,6 @@ public class PhraseSolver {
     private Player player1;
     private Player player2;
     private Board game;
-    private boolean solved;
 
     /* constructor(s) */
 
@@ -20,26 +19,17 @@ public class PhraseSolver {
         player1 = new Player(); // first player
         player2 = new Player(); // second player
         game = new Board();
-        solved = false; // state of the game
     }
-
-    /* accessor(s) */
-
-    /* mutator(s) */
 
     public void play() {
         boolean solved = false;
+        boolean correct = true;
+        
         int currentPlayer = 1;
-
         Scanner input = new Scanner(System.in);
 
-        boolean correct = true;
         while (!solved) {
             /* your code here - game logic */
-
-            // TODO: set the current player to Player 1
-
-            // TODO: prompt the current player for a guess
 
             System.out.println("Phrase: " + game.getPhrase());
             System.out.println("Phrase to solve for: " + game.getSolvedPhrase());
@@ -54,16 +44,34 @@ public class PhraseSolver {
 
             if (guess.length() == 1) {
                 correct = game.guessLetter(guess);
+                if (correct == true) {
+                    System.out.println("\n\"" + guess + "\" was in the phrase.");
+                } else {
+                    System.out.println("\nDarn, \"" + guess + "\" wasn't in the phrase.");
+                    if (currentPlayer == 1) {
+                        currentPlayer = 2;
+                    } else {
+                        currentPlayer = 1;
+                    }
+                }
             } else {
                 solved = game.isSolved(guess);
+                if (solved == true) {
+                    if (currentPlayer == 1) {
+                        System.out.println("\nCongratulations, " + player1.getName() + ", you won!");
+                    } else {
+                        System.out.println("\nCongratulations, " + player2.getName() + ", you won!");
+                    }
+                } else {
+                    if (currentPlayer == 1) {
+                        currentPlayer = 2;
+                    } else {
+                        currentPlayer = 1;
+                    }
+                    System.out.println("\nThat wasn't right...");
+                }
             }
-
-            // TODO: stop the game if the phrase is solved
-
-            // TODO: switch players if the guess is incorrect
-
-            /* your code here - determine how game ends */
-            solved = true;
         }
+        input.close();
     }
 }
