@@ -17,7 +17,6 @@ public class PhraseSolver {
     /* constructor(s) */
 
     public PhraseSolver() {
-        // TODO: PhraseSolver constructor
         player1 = new Player(); // first player
         player2 = new Player(); // second player
         game = new Board();
@@ -37,11 +36,30 @@ public class PhraseSolver {
         boolean correct = true;
         while (!solved) {
             /* your code here - game logic */
+
             // TODO: set the current player to Player 1
+
             // TODO: prompt the current player for a guess
-            // TODO: check to see if the phrase is solved
-            // TODO: check to see if the letter is in the phrase
+
+            System.out.println("Phrase: " + game.getPhrase());
+            System.out.println("Phrase to solve for: " + game.getSolvedPhrase());
+
+            if (currentPlayer == 1) {
+                System.out.println(player1.getName() + ", what is your guess?");
+            } else {
+                System.out.println(player2.getName() + ", what is your guess?");
+            }
+
+            String guess = input.nextLine();
+
+            if (guess.length() == 1) {
+                correct = game.guessLetter(guess);
+            } else {
+                solved = game.isSolved(guess);
+            }
+
             // TODO: stop the game if the phrase is solved
+
             // TODO: switch players if the guess is incorrect
 
             /* your code here - determine how game ends */
