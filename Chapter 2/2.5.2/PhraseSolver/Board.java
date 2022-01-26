@@ -20,7 +20,6 @@ public class Board {
         currentLetterValue = 0;
 
         phrase = loadPhrase(); // initializes phrase
-        setLetterValue();
     }
 
     /* accessor(s) */
