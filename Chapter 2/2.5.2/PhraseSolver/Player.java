@@ -22,7 +22,6 @@ public class Player {
         Scanner sc = new Scanner(System.in);
         name = sc.nextLine();
         System.out.println("Welcome, " + name + "!");
-
     }
 
     public Player(String inputName) {

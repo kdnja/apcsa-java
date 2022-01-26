@@ -129,5 +129,5 @@ public class Board {
         solvedPhrase = newSolvedPhrase;
         // returns if a letter was found or not in a boolean statement
         return foundLetter;
-    } // end of guessLetter
+    }
 }
