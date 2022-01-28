@@ -44,4 +44,15 @@ public class Book {
     public void setAuthor(String a) {
         author = a;
     }
+    
+    public void adjustRating(int r) {
+        // if rating + r is between 0 and 10 then change the rating
+        if (!(rating + r > 10 || rating + r < 0)) {
+            rating += r;
+        }
+    }
+
+    public boolean equals(Book b) {
+        return (b.title.equals(this.title) && b.author.equals(this.author));
+    }
 }
