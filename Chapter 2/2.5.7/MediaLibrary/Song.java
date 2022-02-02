@@ -3,16 +3,14 @@
  *
  * A Book class for the MediaLibrary program
  */
-public class Book {
+public class Song {
     private String title;
-    private String author;
     private int rating;
 
     /*** Constructor ****/
-    public Book(String t, String a) {
+    public Song(String t, int r) {
         title = t;
-        author = a;
-        rating = 0;
+        rating = r;
     }
 
     /*** Accessor methods ***/
@@ -20,18 +18,16 @@ public class Book {
         return title;
     }
 
-    public String getAuthor() {
-        return author;
-    }
-
     public int getRating() {
         return rating;
     }
 
     public String toString() {
-        String info = "\"" + title + "\", written by " + author;
+        String info = "\"" + title + "\"";
         if (rating != 0) {
             info += ", rating is " + rating;
+        } else {
+            info += ", no rating";
         }
         return info;
     }
@@ -41,10 +37,6 @@ public class Book {
         title = t;
     }
 
-    public void setAuthor(String a) {
-        author = a;
-    }
-
     public void adjustRating(int r) {
         // if rating + r is between 0 and 10 then change the rating
         if (!(rating + r > 10 || rating + r < 0)) {
@@ -52,7 +44,7 @@ public class Book {
         }
     }
 
-    public boolean equals(Book b) {
-        return (b.title.equals(this.title) && b.author.equals(this.author));
+    public boolean equals(Song s) {
+        return (s.title.equals(this.title) && s.rating == this.rating);
     }
 }

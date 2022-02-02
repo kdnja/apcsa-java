@@ -19,12 +19,12 @@ public class MediaLibRunner {
         // lists books in library after books are added
         System.out.println("Library:\n" + myLib);
 
-        // demonstrating call by value
+        /* demonstrating call by value */
         int myRating = 5;
         myBook.adjustRating(myRating);
         System.out.println(myBook);
 
-        // object reference parameters
+        /* object reference parameters */
         myBook.setTitle("Harry Potter and the Sorcerer's Stone");
         System.out.println("Book:" + myBook);
         System.out.println("Library: " + myLib);
@@ -32,7 +32,7 @@ public class MediaLibRunner {
         System.out.println("Book:" + myBook);
         System.out.println("Library: " + myLib);
 
-        // BookAlgorithm
+        /* BookAlgorithm */
         System.out.println("\nYou have a NEW Library");
         MediaLib myLib2 = new MediaLib();
         // instantiates a new book named newBook
@@ -47,7 +47,7 @@ public class MediaLibRunner {
         System.out.println("Library: " + myLib2);
         System.out.println("Book: " + newBook);
 
-        // Modifying via a Formal Parameter
+        /* Modifying via a Formal Parameter */
         // System.out.println("before test: " + newBook);
         // myLib.testBook(newBook);
         // System.out.println("after test: " + newBook);
@@ -57,9 +57,30 @@ public class MediaLibRunner {
         System.out.println(newBook.equals(newBook2));
         newBook2.setAuthor("Joe Mama");
         System.out.println(newBook.equals(newBook2));
-        
+
         // MediaLibRunner class does not have direct access to Book's private data
         // System.out.println(newBook2.title);
+
+        /* Movie class */
+        Movie movie = new Movie("The Wizard of Oz", 1.7);
+        System.out.println(movie);
+        Movie movie2 = new Movie("The Wizard of Oz", 1.7);
+        System.out.println(movie2);
+        System.out.println(movie.equals(movie2));
+        movie2.setDuration(1.71);
+        System.out.println(movie.equals(movie2));
+
+        /* 2.5.8 */
+        System.out.println(myLib);
+        // myLib2.addMovie(movie);
+        System.out.println(myLib2);
+        // calls total number of entries in each library
+        System.out.println(MediaLib.getNumEntries());
+
+        // Testing addBook & changeBook
+        System.out.println("Second library: " + myLib2);
+        myLib2.changeBook(myBook);
+        System.out.println("Second library: " + myLib2);
 
     }
 }
