@@ -1,34 +1,25 @@
-/**
- * Activity 2.5.7
- * 
- * A MediaLib class for the MediaLibrary program
+/*
+ * Activity 2.5.9
  */
 public class MediaLib {
-    private static int numEntries = 0;
+    public static String owner = "Caden";
+
+    private static int numEntries;
+    private static int numBooks;
+    private static int numMovies;
+    private static int numSongs;
 
     private Book book;
-    // added in 2.5.8
-    private static int numBooks = 0;
-
     private Movie movie;
-    // added in 2.5.8
-    private static int numMovies = 0;
-
-    // added in 2.5.8
     private Song song;
-    private static int numSongs = 0;
-
-    // added in 2.5.8
-    public static String owner = "Caden";
 
     public void addBook(Book b) {
         if (book == null) {
             book = b;
             numEntries++;
             numBooks++;
-        } else {
-            System.out.println("You can only have up to one book in a library at a time.");
-        }
+        } else
+            System.out.println("Cannot add a new book: A book already exists");
     }
 
     public void changeBook(Book b) {
@@ -44,9 +35,8 @@ public class MediaLib {
             movie = m;
             numEntries++;
             numMovies++;
-        } else {
-            System.out.println("You can only have up to one movie in a library at a time.");
-        }
+        } else
+            System.out.println("Cannot add a new movie: A movie already exists");
     }
 
     public void changeMovie(Movie m) {
@@ -62,9 +52,8 @@ public class MediaLib {
             song = s;
             numEntries++;
             numSongs++;
-        } else {
-            System.out.println("You can only have up to one song in a library at a time.");
-        }
+        } else
+            System.out.println("Cannot add a new song: A song already exists");
     }
 
     public void changeSong(Song s) {
@@ -73,20 +62,6 @@ public class MediaLib {
         } else {
             System.out.println("There is no song to change.");
         }
-    }
-
-    public String toString() {
-        String info = "";
-        if (book != null) {
-            info += book.toString();
-        }
-        if (movie != null) {
-            info += movie.toString();
-        }
-        if (song != null) {
-            info += movie.toString();
-        }
-        return info;
     }
 
     public static String getOwner() {
@@ -113,4 +88,16 @@ public class MediaLib {
         return numSongs;
     }
 
+    public String toString() {
+        String info = "";
+
+        if (book != null)
+            info += "Book: " + book + "\n";
+        if (movie != null)
+            info += "Movie: " + movie + "\n";
+        if (song != null)
+            info += "Song: " + song + "\n";
+
+        return info;
+    }
 }
