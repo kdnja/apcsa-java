@@ -12,12 +12,19 @@ public class MediaLib {
     private Book book;
     private Movie movie;
     private Song song;
+    private String date;
+
+    public MediaLib() {
+        date = LastModified.dateAndTime();
+        System.out.println("Last modified: " + date);
+    }
 
     public void addBook(Book b) {
         if (book == null) {
             book = b;
             numEntries++;
             numBooks++;
+            date = LastModified.dateAndTime();
         } else
             System.out.println("Cannot add a new book: A book already exists");
     }
@@ -25,6 +32,8 @@ public class MediaLib {
     public void changeBook(Book b) {
         if (book != null) {
             book = b;
+            date = LastModified.dateAndTime();
+            System.out.println("Last modified: " + date);
         } else {
             System.out.println("There is no book to change.");
         }
@@ -35,6 +44,8 @@ public class MediaLib {
             movie = m;
             numEntries++;
             numMovies++;
+            date = LastModified.dateAndTime();
+            System.out.println("Last modified: " + date);
         } else
             System.out.println("Cannot add a new movie: A movie already exists");
     }
@@ -42,6 +53,8 @@ public class MediaLib {
     public void changeMovie(Movie m) {
         if (movie != null) {
             movie = m;
+            date = LastModified.dateAndTime();
+            System.out.println("Last modified: " + date);
         } else {
             System.out.println("There is no movie to change.");
         }
@@ -52,6 +65,8 @@ public class MediaLib {
             song = s;
             numEntries++;
             numSongs++;
+            date = LastModified.dateAndTime();
+            System.out.println("Last modified: " + date);
         } else
             System.out.println("Cannot add a new song: A song already exists");
     }
@@ -59,6 +74,8 @@ public class MediaLib {
     public void changeSong(Song s) {
         if (song != null) {
             song = s;
+            date = LastModified.dateAndTime();
+            System.out.println("Last modified: " + date);
         } else {
             System.out.println("There is no song to change.");
         }
