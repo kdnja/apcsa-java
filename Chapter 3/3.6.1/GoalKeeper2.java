@@ -10,7 +10,7 @@ public class GoalKeeper2 {
         System.out.println(ourGoals[5]); // goals scored in 6th game; returns 0
 
         /*
-         * When an array is created using the keyword new, all of its elements 
+         * When an array is created using the keyword new, all of its elements
          * are initialized with a specific value based on the type of elements
          * 
          * Elements of type int are initialized to 0

@@ -43,7 +43,7 @@ public class Partners {
          * Change first partner to Joe
          * Affects all array references pointing to the current array
          */
-        
+
         partners[1] = "Joe";
         System.out.println(days[1] + ", " + friendPartners[1]);
     }
