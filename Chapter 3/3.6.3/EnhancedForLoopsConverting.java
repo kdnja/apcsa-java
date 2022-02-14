@@ -1,11 +1,11 @@
 public class EnhancedForLoopsConverting {
     public static void main(String[] args) {
-        // algorithm1();
-        // algorithm2();
-        // algorithm3();
-        // algorithm4();
-        // algorithm5();
-        // algorithm6();
+        algorithm1();
+        algorithm2();
+        algorithm3();
+        algorithm4();
+        algorithm5();
+        algorithm6();
         algorithm7();
         algorithm8();
         algorithm9();
