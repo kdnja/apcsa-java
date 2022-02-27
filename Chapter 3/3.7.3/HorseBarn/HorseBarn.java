@@ -22,18 +22,16 @@ public class HorseBarn {
         // a try is like an if statement, "throwing" an error if the body of the try fails
         try {
             Scanner sc = new Scanner(new File("horsedata.txt"));
-            // The Scanner method hasNextLine returns true if there is
-            // another line of input
+            // The Scanner method hasNextLine returns true if there is another line of input
             while (sc.hasNextLine()) {
-                // String method trim removes whitespace from the beginning
-                // and end of strings
+                // String method trim removes whitespace from the beginning and end of strings
                 String temp = sc.nextLine().trim();
                 if (temp.equals("")) {
                     // no horse in this stall, add a null entry
                     spaces.add(null);
                 } else {
-                    // String method split splits this string based on the
-                    // specified token and returns an array of individual substrings
+                    // String method split splits this string based on the specified token and
+                    // returns an array of individual substrings
                     String[] tokens = temp.split(",");
                     String name = tokens[0];
                     int weight = Integer.parseInt(tokens[1]);

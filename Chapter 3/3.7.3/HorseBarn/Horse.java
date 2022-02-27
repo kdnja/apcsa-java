@@ -3,7 +3,7 @@
  */
 
 /**
- * A Horse class to define a horses in a barn.
+ * A Horse class to define horses in a barn.
  */
 public class Horse {
     private String name;
