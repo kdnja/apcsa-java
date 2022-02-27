@@ -1,9 +1,7 @@
 /*
  * A24: 3.7.2 ArrayList Steps 10-11
  * 
- * Author: Caden Jamason
- * Date: 02/14/2022
- * Course: AP CSA 1
+ * Author: Caden Jamason Date: 02/14/2022 Course: AP CSA 1
  * 
  * Description: An interactive program to practice using all of the methods in ArrayList.
  */
@@ -26,7 +24,8 @@ public class ArrayListFurniture {
 
         while (!(input.trim().toLowerCase().equals("q"))) {
             System.out.println(furnitureList);
-            System.out.println("Would you like to (a)dd, (i)nsert, (r)emove, re(p)lace, or (q)uit?");
+            System.out
+                    .println("Would you like to (a)dd, (i)nsert, (r)emove, re(p)lace, or (q)uit?");
             input = sc.nextLine();
             if (input.trim().toLowerCase().equals("a")) {
                 System.out.println("Enter a piece of furniture:");
