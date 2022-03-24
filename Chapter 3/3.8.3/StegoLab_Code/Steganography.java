@@ -306,22 +306,5 @@ public class Steganography {
             Picture unhiddenHall3 = revealPicture(hall3);
             unhiddenHall3.show();
         }
-
-        // showDifferentArea Sample Code
-
-        Picture hall = new Picture("femaleLionAndHall.jpg");
-        Picture robot2 = new Picture("robot.jpg");
-        Picture flower2 = new Picture("flower1.jpg");
-
-        // hide pictures
-        Picture hall2 = hidePicture(hall, robot2, 50, 300);
-        Picture hall3 = hidePicture(hall2, flower2, 115, 275);
-        hall3.explore();
-        if (!isSame(hall, hall3)) {
-            Picture hall4 = showDifferentArea(hall, findDifferences(hall, hall3));
-            hall4.show();
-            Picture unhiddenHall3 = revealPicture(hall3);
-            unhiddenHall3.show();
-        }
     }
 }
