@@ -208,7 +208,7 @@ public class Steganography {
 
         ArrayList<Point> diffPoints = new ArrayList<Point>(differences);
 
-        
+
 
     }
 
@@ -307,12 +307,9 @@ public class Steganography {
             unhiddenHall3.show();
         }
 
-
-<<<<<<< HEAD
-=======
         // showDifferentArea Sample Code
 
->>>>>>> c73dc3f2f9d04639e39c331b1055c46a9bb02013
+
 
     }
 }
