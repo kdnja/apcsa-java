@@ -201,6 +201,17 @@ public class Steganography {
     // Get first column
     // Get last row
     // Get last column
+    public static Picture showDifferentArea(Picture original, ArrayList<Point> differences) {
+
+        Picture p1Pic = new Picture(original);
+
+        Pixel[][] p1Pixels = p1Pic.getPixels2D();
+
+        ArrayList<Point> diffPoints = new ArrayList<Point>(differences);
+
+        
+
+    }
 
     public static void main(String[] args) {
         Picture beach = new Picture("beach.jpg");
@@ -260,28 +271,44 @@ public class Steganography {
         // // // // // //
 
         // findDifferences Sample Code
-        Picture arch = new Picture("arch.jpg");
-        Picture arch2 = new Picture("arch.jpg");
-        Picture koala = new Picture("koala.jpg");
-        Picture robot1 = new Picture("robot.jpg");
+        // Picture arch = new Picture("arch.jpg");
+        // Picture arch2 = new Picture("arch.jpg");
+        // Picture koala = new Picture("koala.jpg");
+        // Picture robot1 = new Picture("robot.jpg");
 
-        ArrayList<Point> pointList = findDifferences(arch, arch2);
-        System.out.println("PointList after comparing two identical pictures has a size of "
-                + pointList.size());
+        // ArrayList<Point> pointList = findDifferences(arch, arch2);
+        // System.out.println("PointList after comparing two identical pictures has a size of "
+        // + pointList.size());
 
-        pointList = findDifferences(arch, koala);
-        System.out.println("PointList after comparing two different sized pictures has a size of "
-                + pointList.size());
+        // pointList = findDifferences(arch, koala);
+        // System.out.println("PointList after comparing two different sized pictures has a size of
+        // "
+        // + pointList.size());
 
-        Picture arch3 = hidePicture(arch, robot1, 65, 102);
-        pointList = findDifferences(arch, arch3);
-        System.out.println("PointList after hiding a picture has a size of " + pointList.size());
+        // Picture arch3 = hidePicture(arch, robot1, 65, 102);
+        // pointList = findDifferences(arch, arch3);
+        // System.out.println("PointList after hiding a picture has a size of " + pointList.size());
 
-        arch.show();
-        arch3.show();
+        // arch.show();
+        // arch3.show();
+        // // // // // //
 
-        // showDifferentArea Sample Code
-        
+        Picture hall = new Picture("femaleLionAndHall.jpg");
+        Picture robot2 = new Picture("robot.jpg");
+        Picture flower2 = new Picture("flower1.jpg");
+
+        // hide pictures
+        Picture hall2 = hidePicture(hall, robot2, 50, 300);
+        Picture hall3 = hidePicture(hall2, flower2, 115, 275);
+        hall3.explore();
+        if (!isSame(hall, hall3)) {
+            Picture hall4 = showDifferentArea(hall, findDifferences(hall, hall3));
+            hall4.show();
+            Picture unhiddenHall3 = revealPicture(hall3);
+            unhiddenHall3.show();
+        }
+
+
 
     }
 }
