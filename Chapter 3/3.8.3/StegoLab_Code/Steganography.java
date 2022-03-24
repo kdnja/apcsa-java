@@ -132,7 +132,6 @@ public class Steganography {
         // Second variable is used for looping through the secret image and getting the colors
         // We get the colors from the secret image and put them on the source image
         if (hide) {
-            System.out.println("Test");
             for (int r = startRow, r2 = 0; r < sourcePixels.length
                     && r2 < secretPixels.length; r++, r2++) {
                 for (int c = startColumn, c2 = 0; c < sourcePixels[0].length - 1
@@ -309,6 +308,11 @@ public class Steganography {
         }
 
 
+<<<<<<< HEAD
+=======
+        // showDifferentArea Sample Code
+
+>>>>>>> c73dc3f2f9d04639e39c331b1055c46a9bb02013
 
     }
 }
