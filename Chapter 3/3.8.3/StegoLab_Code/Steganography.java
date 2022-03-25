@@ -195,116 +195,151 @@ public class Steganography {
         return pointList;
     }
 
-    // showDifferentArea tasks:
-    // Get first row
-    // Get first column
-    // Get last row
-    // Get last column
-    public static Picture showDifferentArea(Picture original, ArrayList<Point> differences) {
 
-        Picture p1Pic = new Picture(original);
+    public static Picture showDifferentArea(Picture picture, ArrayList<Point> arrList) {
+        // Initialize `newPic` using `picture`
+        Picture newPic = new Picture(picture);
+        // Initialize `pixels` with `newPic`'s 2D array
+        Pixel[][] pixels = newPic.getPixels2D();
 
-        Pixel[][] p1Pixels = p1Pic.getPixels2D();
+        // Initialize minimum and maximum (x, y) coordinates
+        int minX = (int) arrList.get(0).getX();
+        int minY = (int) arrList.get(0).getY();
+        int maxX = (int) arrList.get(0).getX();
+        int maxY = (int) arrList.get(0).getY();
 
-        ArrayList<Point> diffPoints = new ArrayList<Point>(differences);
+        // Find the minimum and maximum (x, y) coordinates
+        for (int i = 0; i < arrList.size(); i++) {
+            if (arrList.get(i).getX() < minX) {
+                minX = (int) (arrList.get(i).getX());
+            }
+            if (arrList.get(i).getX() > maxX) {
+                maxX = (int) (arrList.get(i).getX());
+            }
+            if (arrList.get(i).getY() < minY) {
+                minY = (int) (arrList.get(i).getY());
+            }
+            if (arrList.get(i).getY() > maxY) {
+                maxY = (int) (arrList.get(i).getY());
+            }
+        }
 
+        // Check for top column, leftmost row, rightmost row, and bottom column
+        for (int r = 0; r < pixels.length; r++) {
+            for (int c = 0; c < pixels[0].length; c++) {
+                if ((r == maxY && c <= maxX && c >= minX) || (r == minY && c <= maxX && c >= minX)
+                        || (c == maxX && r <= maxY && r >= minY)
+                        || (c == minX && r <= maxY && r >= minY)) {
+                    pixels[c][r].setColor(Color.RED);
+                }
+            }
+        }
 
-
+        return newPic;
     }
 
     public static void main(String[] args) {
-        Picture beach = new Picture("beach.jpg");
-        Picture motorcycle = new Picture("blueMotorcycle.jpg");
-
-        // // // clearLow Sample Code // // //
+        // // // clearLow Sample Code (uncomment below) // // //
+        // Picture beach = new Picture("beach.jpg");
         // beach.explore();
         // Picture copy = testClearLow(beach);
         // copy.explore();
-        // // // // // //
+        // // // End of clearLow Sample Code // // //
 
-        // // // setLow Sample Code // // //
-        // Picture beach2 = new Picture("beach.jpg");
-        // beach2.explore();
-        // Picture copy2 = testSetLow(beach2, Color.PINK);
-        // copy2.explore();
-        // Picture copy3 = revealPicture(copy2);
-        // copy3.explore();
-        // // // // // //
 
-        // // // canHide Sample Code // // //
+        // // // setLow Sample Code (uncomment below) // // //
+        // Picture beach = new Picture("beach.jpg");
         // beach.explore();
+        // Picture copy = testSetLow(beach, Color.PINK);
+        // copy.explore();
+        // Picture copy1 = revealPicture(copy);
+        // copy1.explore();
+        // // // End of setLow Sample Code // // //
+
+
+        // // // canHide Sample Code (uncomment below) // // //
+        // Picture beach = new Picture("beach.jpg");
+        // Picture motorcycle = new Picture("blueMotorcycle.jpg");
+        // beach.explore();
+        //
         // if (canHide(beach, motorcycle) == true) {
         // Picture copy = hidePicture(beach, motorcycle);
         // copy.explore();
         // Picture copy2 = revealPicture(copy);
         // copy2.explore();
         // }
-        // // // // // //
+        // // // End of canHide Sample Code // // //
 
-        // // // hidePicture2 Sample Code // // //
+
+        // // // hidePicture Sample Code (uncomment below) // // //
+        // Picture beach = new Picture("beach.jpg");
         // Picture robot = new Picture("robot.jpg");
         // Picture flower1 = new Picture("flower1.jpg");
         // beach.explore();
-
+        //
         // // these lines hide 2 pictures
         // Picture hidden1 = hidePicture(beach, robot, 65, 208);
         // Picture hidden2 = hidePicture(hidden1, flower1, 280, 110);
-
+        //
         // hidden2.explore();
         // Picture unhidden = revealPicture(hidden2);
         // unhidden.explore();
-        // // // // // //
+        // // // End of hidePicture Sample Code // // //
 
-        // // // isSame Sample Code // // //
+
+        // // // isSame Sample Code (uncomment below) // // //
         // Picture swan = new Picture("swan.jpg");
         // Picture swan2 = new Picture("swan.jpg");
-
+        //
         // System.out.println("swan and swan2 are the same: " + isSame(swan, swan2));
-
+        //
         // swan = testClearLow(swan);
         // System.out.println(
         // "swan and swan2 are the same (after clearLow run on swan): " + isSame(swan, swan2));
         // // should return:
         // // Swan and swan2 are the same: true
         // // Swan and swan2 are the same (after clearLow run on swan): false
-        // // // // // //
+        // // // End of isSame Sample Code // // //
 
-        // findDifferences Sample Code
+        // // // findDifferences Sample Code (uncomment below) // // //
         // Picture arch = new Picture("arch.jpg");
         // Picture arch2 = new Picture("arch.jpg");
         // Picture koala = new Picture("koala.jpg");
         // Picture robot1 = new Picture("robot.jpg");
-
+        //
         // ArrayList<Point> pointList = findDifferences(arch, arch2);
         // System.out.println("PointList after comparing two identical pictures has a size of "
         // + pointList.size());
-
+        //
         // pointList = findDifferences(arch, koala);
         // System.out.println("PointList after comparing two different sized pictures has a size of
         // "
         // + pointList.size());
-
+        //
         // Picture arch3 = hidePicture(arch, robot1, 65, 102);
         // pointList = findDifferences(arch, arch3);
         // System.out.println("PointList after hiding a picture has a size of " + pointList.size());
-
+        //
         // arch.show();
         // arch3.show();
-        // // // // // //
+        // // // End of findDifferences Sample Code // // //
 
-        Picture hall = new Picture("femaleLionAndHall.jpg");
-        Picture robot2 = new Picture("robot.jpg");
-        Picture flower2 = new Picture("flower1.jpg");
 
-        // hide pictures
-        Picture hall2 = hidePicture(hall, robot2, 50, 300);
-        Picture hall3 = hidePicture(hall2, flower2, 115, 275);
-        hall3.explore();
-        if (!isSame(hall, hall3)) {
-            Picture hall4 = showDifferentArea(hall, findDifferences(hall, hall3));
-            hall4.show();
-            Picture unhiddenHall3 = revealPicture(hall3);
-            unhiddenHall3.show();
-        }
+        // // // showDifferentArea Sample Code (uncomment below) // // //
+        // Picture hall = new Picture("femaleLionAndHall.jpg");
+        // Picture robot2 = new Picture("robot.jpg");
+        // Picture flower2 = new Picture("flower1.jpg");
+        //
+        // // hide pictures
+        // Picture hall2 = hidePicture(hall, robot2, 50, 300);
+        // Picture hall3 = hidePicture(hall2, flower2, 115, 275);
+        // hall3.explore();
+        // if (!isSame(hall, hall3)) {
+        // Picture hall4 = showDifferentArea(hall, findDifferences(hall, hall3));
+        // hall4.explore();
+        // Picture unhiddenHall3 = revealPicture(hall3);
+        // unhiddenHall3.explore();
+        // }
+        // // // End of showDifferentArea Sample Code // // //
     }
 }
