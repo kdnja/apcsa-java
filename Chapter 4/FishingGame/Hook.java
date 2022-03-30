@@ -1,13 +1,21 @@
-/**
- * Activity 4.9.3
- */
 public class Hook extends LakeObject {
-    private int strength = 45;
+    private int strength; // initializes private int strength
+    private int cost;
+
+    // calls super()
+    public Hook() {
+        super(); // invokes the default constructor of LakeObject
+        strength = 55; // initializes value of strength
+        cost = 15; // initializes value of cost
+    }
 
     /*---------- accessor ----------*/
     public int getStrength() {
-        return strength; // This return will be updated in the next activity
-        // return strength;
+        return strength;
+    }
+
+    public int getCost() {
+        return cost;
     }
 
     @Override
