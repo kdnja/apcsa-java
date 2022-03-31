@@ -1,6 +1,3 @@
-/*
- * Activity 4.9.2
- */
 public class Animal {
     private String food;
     private boolean nocturnal;
@@ -8,7 +5,8 @@ public class Animal {
 
     // No-arg constructor for Animal
     // Required for an implicit call to Animal
-    public Animal() {}
+    public Animal() {
+    }
 
     // Constructor for Animal
     public Animal(String food, boolean nocturnal, double aveLifeSpan) {

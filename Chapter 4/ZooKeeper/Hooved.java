@@ -1,8 +1,6 @@
-/*
- * Activity 4.9.2
- */
 public class Hooved extends Animal {
-    public Hooved() {}
+    public Hooved() {
+    }
 
     public Hooved(String food, boolean nocturnal, double aveLifeSpan) {
         super(food, nocturnal, aveLifeSpan);
