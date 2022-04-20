@@ -48,13 +48,15 @@ public class CelebrityGame {
     public boolean processGuess(String guess) {
         guess = guess.trim();
         String answer = gameCelebrity.getName();
+
         if (answer.equalsIgnoreCase(guess)) {
             celebGameList.remove(gameCelebrity);
             if (celebGameList.size() == 0) {
                 gameCelebrity = new Celebrity();
+            } else {
+                gameCelebrity = celebGameList.get(0);
             }
         }
-
         return answer.equalsIgnoreCase(guess);
     }
 
@@ -102,6 +104,7 @@ public class CelebrityGame {
      * @return If the clue is valid.
      */
     public boolean validateClue(String clue, String type) {
+        clue = clue.trim();
         return (clue.length() >= 10);
     }
 
